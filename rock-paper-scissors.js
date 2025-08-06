@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 //Create a function that returns the string "rock", "paper", or "scissors"
 function getComputerChoice(){
     //Variable to hold the computerChoice
@@ -32,6 +35,8 @@ function getHumanChoice(){
 }
 
 getHumanChoice();
+
+
 
 
 
