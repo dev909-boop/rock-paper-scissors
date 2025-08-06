@@ -1,12 +1,7 @@
-//Variable to hold the computerChoice
-//Generate the computerChoice randomly from rock = 1, paper = 2, scissors = 3
-    //Math.floor(Math.random() * max - min + 1)) + min
-    
-
-
 //Create a function that returns the string "rock", "paper", or "scissors"
 function getComputerChoice(){
-
+    //Variable to hold the computerChoice
+    //Generate the computerChoice randomly from 3 options
     let computerChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
     console.log(computerChoice);
 
@@ -25,8 +20,23 @@ function getComputerChoice(){
     console.log(computerChoice)
     return computerChoice;
 }
-
 getComputerChoice();
+
+
+
+//Create a function to get the user input of rock, paper, or scissors
+function getHumanChoice(){
+    //create variable to request and hold user input of rock, paper, or scissors
+    let humanChoice = prompt("Choose rock, paper, or scissors")
+    console.log(humanChoice);
+}
+
+getHumanChoice();
+
+
+
+
+
 
 
 
