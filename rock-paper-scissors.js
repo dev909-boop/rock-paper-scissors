@@ -4,7 +4,7 @@ let computerScore = 0;
 //Create a function that returns the string "rock", "paper", or "scissors"
 function getComputerChoice(){
     //Variable to hold the computerChoice
-    //Generate the computerChoice randomly from 3 options
+    //Generate the computerChoice randomly from 3 options (rock, paper, scissors)
     let computerChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
     console.log(computerChoice);
 
@@ -19,24 +19,40 @@ function getComputerChoice(){
     } else {
         computerChoice = scissors;
     }
-
     console.log(computerChoice)
     return computerChoice;
 }
-getComputerChoice();
 
 
 
 //Create a function to get the user input of rock, paper, or scissors
 function getHumanChoice(){
     //create variable to request and hold user input of rock, paper, or scissors
-    let humanChoice = prompt("Choose rock, paper, or scissors")
+    let humanChoice = prompt("Choose rock, paper, or scissors.");
+    //convert input to all lower case
+    humanChoice = humanChoice.toLowerCase();
+
     console.log(humanChoice);
+    return humanChoice;
 }
 
-getHumanChoice();
+
+function playRound(humanChoice, computerChoice) {
+    const computerSelection = getComputerChoice();
+    const humanSelection = getHumanChoice();
+
+    if (computerSelection === humanSelection) {
+        console.log("It's a draw!");
+        return;
+    }
 
 
+
+
+
+}
+
+playRound();
 
 
 
