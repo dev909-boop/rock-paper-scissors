@@ -1,16 +1,16 @@
 let humanScore = 0;
 let computerScore = 0;
 
+    const rock = "Rock";
+    const paper = "Paper";
+    const scissors = "Scissors";
+
 //Create a function that returns the string "rock", "paper", or "scissors"
 function getComputerChoice(){
     //Variable to hold the computerChoice
     //Generate the computerChoice randomly from 3 options (rock, paper, scissors)
     let computerChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
     console.log(computerChoice);
-
-    const rock = "rock";
-    const paper = "paper";
-    const scissors = "scissors";
 
     if (computerChoice === 1) {
         computerChoice = rock;
@@ -19,7 +19,6 @@ function getComputerChoice(){
     } else {
         computerChoice = scissors;
     }
-    console.log(computerChoice)
     return computerChoice;
 }
 
@@ -32,27 +31,44 @@ function getHumanChoice(){
     //convert input to all lower case
     humanChoice = humanChoice.toLowerCase();
 
-    console.log(humanChoice);
+    //Assign humanChoice to variable
+    if (humanChoice === "rock") {
+        humanChoice = rock;
+    }else if (humanChoice === "paper") {
+        humanChoice = paper;
+    }else {
+        //catches anything that is not rock or paper and assigns scissors
+        humanChoice = scissors;
+    }
     return humanChoice;
 }
 
-
 function playRound(humanChoice, computerChoice) {
-    const computerSelection = getComputerChoice();
-    const humanSelection = getHumanChoice();
-
+    
     if (computerSelection === humanSelection) {
         console.log("It's a draw!");
-        return;
+    } else if (
+        computerSelection === rock && humanSelection === scissors || 
+        computerSelection === paper && humanSelection === rock ||
+        computerSelection === scissors && humanSelection === paper) 
+        {
+        console.log(`You lose! ${computerSelection} beats ${humanSelection}.`)
+        ++computerScore;
+        
     }
 
 
-
-
-
 }
+const computerSelection = getComputerChoice();
+const humanSelection = getHumanChoice();
+
+console.log(`The computer chose ${computerSelection}.`); 
+
+console.log(`You chose ${humanSelection}.`);
+
 
 playRound();
+console.log(computerScore);
 
 
 
