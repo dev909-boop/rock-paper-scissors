@@ -10,7 +10,7 @@ function getComputerChoice(){
     //Variable to hold the computerChoice
     //Generate the computerChoice randomly from 3 options (rock, paper, scissors)
     let computerChoice = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-    console.log(computerChoice);
+    //console.log(computerChoice);
 
     if (computerChoice === 1) {
         computerChoice = rock;
@@ -55,6 +55,9 @@ function playRound(humanChoice, computerChoice) {
         console.log(`You lose! ${computerSelection} beats ${humanSelection}.`)
         ++computerScore;
         
+    } else {
+        console.log(`You Win! ${humanSelection} beats ${computerSelection}.`)
+        ++humanScore;
     }
 
 
@@ -67,8 +70,9 @@ console.log(`The computer chose ${computerSelection}.`);
 console.log(`You chose ${humanSelection}.`);
 
 
-playRound();
+playRound(humanSelection, computerSelection);
 console.log(computerScore);
+console.log(humanScore);
 
 
 
