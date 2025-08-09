@@ -41,8 +41,14 @@ function getHumanChoice(){
     }else if (humanChoice === "paper") {
         humanChoice = paper;
         console.log(humanChoice);
+        
+ //catches anything that is not rock or paper and assigns scissors, also handles null
+    } else if (humanChoice === null) {
+        humanChoice = scissors;
+        console.log(humanChoice);
+
     }else {
-        //catches anything that is not rock or paper and assigns scissors
+
         humanChoice = scissors;
         console.log(humanChoice);
     }
@@ -50,27 +56,27 @@ function getHumanChoice(){
 }
 
 function playGame() {
-    function playRound() {
-    
-    if (computerSelection === humanSelection) {
-        console.log("It's a draw!");
-    } else if (
-        computerSelection === rock && humanSelection === scissors || 
-        computerSelection === paper && humanSelection === rock ||
-        computerSelection === scissors && humanSelection === paper) 
-        {
-        console.log(`You lose! ${computerSelection} beats ${humanSelection}.`)
-        ++computerScore;
-        
-    } else {
-        console.log(`You Win! ${humanSelection} beats ${computerSelection}.`)
-        ++humanScore;
-    }
+    for (let round = 0; round <5; round++){
+        function playRound() {
+            if (computerSelection === humanSelection) {
+                console.log("It's a draw!");
+            } else if (
+                computerSelection === rock && humanSelection === scissors || 
+                computerSelection === paper && humanSelection === rock ||
+                computerSelection === scissors && humanSelection === paper) 
+                {
+                console.log(`You lose! ${computerSelection} beats ${humanSelection}.`)
+                ++computerScore;
+                
+            } else {
+                console.log(`You Win! ${humanSelection} beats ${computerSelection}.`)
+                ++humanScore;
+            }
 
-    }
-
-    playRound();
-
+        }
+        playRound();
+        console.log(`~Scoreboard~ \nComputer: ${computerScore}, You: ${humanScore}`);
+    } 
     
 }
 
